@@ -1,3 +1,16 @@
+mod cli;
+mod config;
+mod db;
+mod diff;
+mod knowledge;
+mod observer;
+
+use cli::Cli;
+
 fn main() {
-    println!("Hello, a-hole!");
+    let cli = Cli::parse();
+    if let Err(e) = cli.run() {
+        eprintln!("Error: {}", e);
+        std::process::exit(1);
+    }
 }

@@ -1,14 +1,15 @@
 ```
-   ___        _           _
-  / _ \      | |         | |
- / /_\ \_____| |__   ___ | | ___
- |  _  |_____| '_ \ / _ \| |/ _ \
- | | | |     | | | | (_) | |  __/
- \_| |_/     |_| |_|\___/|_|\___|
+          ▗▖        ▗▄▖       
+          ▐▌        ▝▜▌       
+ ▟██▖     ▐▙██▖ ▟█▙  ▐▌   ▟█▙ 
+ ▘▄▟▌     ▐▛ ▐▌▐▛ ▜▌ ▐▌  ▐▙▄▟▌
+▗█▀▜▌ ██▌ ▐▌ ▐▌▐▌ ▐▌ ▐▌  ▐▛▀▀▘
+▐▙▄█▌     ▐▌ ▐▌▝█▄█▘ ▐▙▄ ▝█▄▄▌
+ ▀▀▝▘     ▝▘ ▝▘ ▝▀▘   ▀▀  ▝▀▀ 
 ```
-**Attention-hole** — a declarative whitelist for attention
+# **Attention-hole** — a declarative whitelist for attention
 
-*The hole your attention actually goes through.*
+### *The hole your attention actually goes through.*
 
 [![Crates.io](https://img.shields.io/crates/v/a-hole.svg)](https://crates.io/crates/a-hole)[![License](https://img.shields.io/crates/l/a-hole.svg)](LICENSE)
 
@@ -35,11 +36,4 @@ a-hole surfaces only what you've proven you want
 
 You don't write it. You live it.
 
-```
- the internet          your attention
-      │                      │
-   pi-hole               a-hole
-  blacklist             whitelist
-      │                      │
-  your browser          what matters
-```
+## assistance in keeping tools and context and arms reach
