@@ -1,4 +1,12 @@
+# The Philosophy of a-hole
 
+## Diffs Are Immutable
+
+**Diffs are immutable. Everything else is swap-able.**
+
+The base game ships, gets patched, gets replaced, eventually gets abandoned. The mod—the change, the intent, the delta—is the durable thing. If you keep the diff, you can replay it against any version of the base. If you keep the file, you're hostage to whatever the base does next.
+
+This is the core insight of a-hole: **the change itself is the product, not the configuration.**
 
 ## The Mod vs Base Game Parallel
 
@@ -8,8 +16,6 @@ In your terminal stack, the shell or terminal emulator is the renderer. A config
 
 **The abstraction level you mod at determines your portability surface.**
 
-See [The Mod vs Base Game Parallel](docs/philosophy/mod-vs-base.md) for detailed exploration.
-
 ## The Subversive Mirror
 
 Telemetry already exists. It's already running. It's already watching every config change, every crash, every preference you set. The data is already being collected—it just flows away from you, toward someone else's product roadmap.
@@ -17,8 +23,6 @@ Telemetry already exists. It's already running. It's already watching every conf
 a-hole intercepts a copy of that stream and keeps it locally—not to block it, not to fight it, just to give you a seat at the table with your own data. The pipe already exists. We're just pointing a copy of it in the other direction.
 
 **Mirror, don't block.**
-
-See [The Subversive Mirror](docs/philosophy/subversive-mirror.md) for detailed exploration.
 
 ## Resource Constraints
 
