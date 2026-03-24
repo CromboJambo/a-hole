@@ -226,7 +226,7 @@ impl<'a> ChangeCapture<'a> {
 
         let current_hash = self.comparator.get_current_hash()?;
 
-        if !self.comparator.is_material_change(&current_hash, &None) {
+        if !self.comparator.is_material_change(&current_hash, None) {
             debug!("File changed but content hash unchanged (metadata-only change)");
             return Ok(false);
         }
