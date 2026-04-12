@@ -8,9 +8,7 @@
 //!
 //! Follows the MVP data model from kickstart.md exactly.
 
-use crate::db::{
-    ConfigChange, DbError, FileSnapshot, RevertRecord, WatchedFile, WatchedFileDisplay,
-};
+use crate::db::types::{ConfigChange, DbError, FileSnapshot, RevertRecord, WatchedFile, WatchedFileDisplay};
 use anyhow::{Context, Result};
 use rusqlite::{params, Connection, OpenFlags};
 use std::path::PathBuf;

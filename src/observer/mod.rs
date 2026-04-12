@@ -344,37 +344,34 @@ impl ConfigWatcher {
         let file_type = FileType::from_extension(path);
         let diff_result = match DiffComputer::compute(old_content, new_content, &file_type) {
             Ok(d) => d,
-                   let file_type = FileType::from_extension(path);
-                   let diff_result = match DiffComputer::compute(old_content, new_content, &file_type) {
-                       Ok(d) => d,
-                       Err(e) => {
-                           warn!("Diff computation failed: {}", e);
-                           return Ok(()); // Continue with minimal tracking
-                       }
-                   };
+            Err(e) => {
+                warn!("Diff computation failed: {}", e);
+                return Ok(()); // Continue with minimal tracking
+            }
+        };
 
-                   // Create current snapshot in database
-                   let current_snapshot_id = db.create_snapshot(
-                       watched_file.id,
-                       &new_snapshot.content,
-                       &new_snapshot.content_hash,
-                       Some(new_snapshot.captured_at),
-                   )?;
+        // Create current snapshot in database
+        let current_snapshot_id = db.create_snapshot(
+            watched_file.id,
+            &new_snapshot.content,
+            &new_snapshot.content_hash,
+            Some(new_snapshot.captured_at),
+        )?;
 
-                   // Record the change
-                   let previous_snapshot_id = prev_snapshot.as_ref().map(|s| s.id);
-                   let summary_json = serde_json::to_string(&diff_result.summary).unwrap_or_default();
+        // Record the change
+        let previous_snapshot_id = prev_snapshot.as_ref().map(|s| s.id);
+        let summary_json = serde_json::to_string(&diff_result.summary).unwrap_or_default();
 
-                   let change_id = db.record_change(
-                       watched_file.id,
-                       previous_snapshot_id,
-                       current_snapshot_id,
-                       new_snapshot.captured_at,
-                       "updated".to_string(), // MVP: only track updates for now
-                       diff_result.format.to_string(),
-                       &summary_json,
-                       "{}".to_string(), // Empty metadata for v0.1
-                   )?;
+        let change_id = db.record_change(
+            watched_file.id,
+            previous_snapshot_id,
+            current_snapshot_id,
+            new_snapshot.captured_at,
+            "updated".to_string(), // MVP: only track updates for now
+            diff_result.format.to_string(),
+            &summary_json,
+            "{}".to_string(), // Empty metadata for v0.1
+        )?;
 
         info!("Recorded change #{} in {}", change_id, path.display());
 

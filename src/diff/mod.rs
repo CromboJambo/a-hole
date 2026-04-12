@@ -7,11 +7,11 @@
 //!
 //! The system never fails to record a change even if parsing is unavailable.
 
-use crate::domain::{ChangeKind, DiffFormat, DiffSummary};
-use anyhow::{Context, Result};
+use crate::domain::{DiffFormat, DiffSummary};
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-use tracing::{debug, error, info, warn};
+use serde_json::Value;
+use tracing::{debug, error, warn};
 
 /// Represents the result of computing a diff between two file states.
 #[derive(Debug, Clone, Serialize, Deserialize)]
