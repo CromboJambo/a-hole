@@ -1,0 +1,23 @@
+# Agent Updater Tool Configuration
+# This file defines the behavior of the updater tool
+
+[settings]
+sync_interval = 300
+log_level = "info"
+auto_update = true
+
+[security]
+allow_remote_updates = true
+require_auth = false
+credential_injection = "host_boundary"
+
+[performance]
+max_concurrent_syncs = 5
+timeout_seconds = 60
+retry_limit = 3
+
+[features]
+enable_git_sync = true
+enable_rsync_sync = true
+enable_version_check = true
+enable_log_rotation = true

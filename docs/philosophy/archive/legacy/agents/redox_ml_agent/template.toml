@@ -1,0 +1,25 @@
+# Redox ML Agent Template Configuration
+# This file defines the core behavior and structure of the agent
+# User annotations are kept in comments.toml and can be toggled on/off
+
+[settings]
+max_threads = 4
+retry_limit = 5
+enable_logging = true
+api_url = "https://api.redox.ml"
+
+[security]
+allow_wasm_execution = true
+require_auth = false
+credential_injection = "host_boundary"
+
+[performance]
+cache_size = 1000
+timeout_seconds = 30
+max_retries = 3
+
+[features]
+enable_ml_processing = true
+enable_code_generation = true
+enable_data_analysis = true
+enable_interactive_mode = true

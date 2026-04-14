@@ -1,0 +1,19 @@
+# Redox ML Agent Comments Layer
+# User annotations and preferences that can be toggled on/off
+# This file is synced from ~/.dotfiles/agent_a_comments.toml
+
+# I prefer 8 threads on my desktop for better performance
+preferred_threads = 8
+
+# Logging can be verbose for debugging during development
+logging_level = "verbose"
+
+# My notes about this agent's behavior
+user_notes = """
+This agent should focus on code generation and ML analysis.
+I want to keep the cache size at 2000 for better memory usage.
+"""
+
+# Additional feature preferences
+enable_code_generation = true
+enable_data_analysis = true

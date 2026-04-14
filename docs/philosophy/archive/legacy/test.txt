@@ -1,0 +1,5 @@
+This is a test file to verify the WASM tool functionality in CrabJar.
+The agent should be able to read this file using its WASM tools.
+
+WASM integration allows for secure execution of untrusted code
+while maintaining the safety and isolation of the host system.
