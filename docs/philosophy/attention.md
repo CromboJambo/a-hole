@@ -1284,16 +1284,16 @@ No:
 
 ### If you wanted to make this real (no fluff)
 
-You’d define:
+This is now implemented in `mirror-log/src/attention/mod.rs`. The core mechanics are:
 
 1. **Max size** (hard cap)
-	- e.g., 10–15 active threads
+	- `MAX_ACTIVE_ITEMS` (e.g., 15 active items)
 2. **Decay rule**
-	- if untouched for X days → auto-drop
-3. **Promotion rule**
-	- only add something if it’s been revisited twice
-4. **Link requirement**
-	- every item must point to deeper context
+	- `decay_threshold` (days since last access → demotion)
+3. **Promotion/Retention rule**
+	- `pinned` flag and `access_count` thresholds to prevent decay
+4. **Structural Salience**
+	- Retrieval conditioned on `tag_count` and `link_count` (relational importance)
 
 ---
 
