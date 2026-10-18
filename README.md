@@ -1,3 +1,5 @@
 # A-Hole
 
-Test/joke repository. Exists to prove that even serious engineers have a sense of humor about version control.
+Declarative attention sink. Riff on Pi-Hole and crab-hole: pack up all the noise to a solitary place where it can't believe you.
+
+It's not a joke repo. It's all about what happens when you stop trying to display everything and instead bury the semicons.
